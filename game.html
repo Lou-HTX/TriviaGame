@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moped Trivia Game</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+
+    <div id="gamePlay">
+    </div>
+
+    <div class="container">
+      <div class="row"><br /></div>
+      <div class="jumbotron">
+        <h1 class="title">Moped Trivia Game</h1>
+        <br>
+        <h2 class="show-number" id="show-number">Time Remaining: 30 Seconds</h2>
+        <br>
+        <div id="score">
+          <p>Which of these mopeds uses a variated transmission?</p>
+          <input type="radio" id="maxi"name="a" value="maxi">&nbsp&nbspMaxi&nbsp&nbsp&nbsp
+          <input type="radio" id="targa"name="a" value="targa">&nbsp&nbspTarga&nbsp&nbsp&nbsp
+          <input type="radio" id="hobbit" name="a" value="hobbit">&nbsp&nbspHobbit&nbsp&nbsp&nbsp
+          <br><br>
+          <p>Which of these mopeds is a step through?</p>
+
+          <input type="radio" id="magnum"name="b" value="magnum">&nbsp&nbsp Magnum &nbsp&nbsp&nbsp
+          <input type="radio" id="honda" name="b" value="honda">&nbsp&nbsp Hobbit &nbsp&nbsp&nbsp
+          <input type="radio" id="tsm"name="b" value="tsm">&nbsp&nbsp TSM &nbsp&nbsp&nbsp
+          <br><br>
+          <p>Which of these moped brands is french?</p>
+
+          <input type="radio"  id="puch"name="c" value="puch">&nbsp&nbsp Puch &nbsp&nbsp&nbsp
+          <input type="radio" id="vespa"name="c" value="vespa">&nbsp&nbsp Vespa &nbsp&nbsp&nbsp
+          <input type="radio" id="motobecane" name="c" value="motobecane">&nbsp&nbsp Motobecane &nbsp&nbsp&nbsp
+          <br><br>
+          <p>Which of these mopeds were available in J.C. Penney's catalog?</p>
+
+          <input type="radio" id="ciao"name="d" value="ciao">&nbsp&nbsp Ciao &nbsp&nbsp&nbsp
+          <input type="radio" id="sprint"name="d" value="sprint">&nbsp&nbsp Sprint &nbsp&nbsp&nbsp
+          <input type="radio" id="pinto" name="d" value="pinto">&nbsp&nbsp Pinto &nbsp&nbsp&nbsp
+          <br><br>
+        </div>
+        <div id="score_button">
+          <a href="#" id="done" class="btn btn-info btn-lg btn-block" role="button">Done</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script type= "text/javascript" src="assets/javascript/app.js"></script>
+
+  </body>
+</html>
