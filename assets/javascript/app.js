@@ -3,11 +3,12 @@ var counter = 30;
 var intervalId;
 var correct = 0;
 var incorrect = 0;
-var unanswered = 0;
-var noSelection = $("input:radio[name='a']").is(":checked");
+var unanswered = 4;
+// var unknown = $("input[type=radio][name='a']").is(':checked');
+// var noSelection = $("input:radio[name='a']").is(":checked");
+// var notSelected = !$("input[name='a']:checked").val();
+var input = $("input");
 
-
-$("#done").on("click", score);
 
   function decrement() {
     counter--;
@@ -17,55 +18,59 @@ $("#done").on("click", score);
     }
   }
 
-  function score() {
-    stop();
-    $("#score").html("<h2> Total Correct: " + correct + "</h2>");
-    $("#score").append("<h2> Total Incorrect: " + incorrect + "</h2>");
-    $("#score").append("<h2> Total Unanswered: " + unanswered + "</h2>");
-    $("#score_button").html("");
-    if (!$("input[name='a']:checked").val()) {
-      unanswered++
-       console.log('Nothing is checked!');
-    }
-    else {
-      // alert('One of the radio buttons is checked!');
-    }
-
-    var unknown = $("input[type=radio][name='a']").is(':checked');
-    console.log(unknown);
-    if (unknown === false) {
-      unanswered++;
-    }
-  }
-
-
-  function run() {
-    intervalId = setInterval(decrement, 1000);
-  }
-
   function stop() {
     clearInterval(intervalId);
   }
 
-
-  var input = $("input");
-  var qOne = document.getElementsByName("a");
     for (var i = input.length; i--;) {
         input[i].onchange = function() {
           aOne = (this.value);
-            // alert(this.value);
             console.log(aOne);
         if (aOne === "hobbit" || aOne === "honda" || aOne === "motobecane" || aOne === "pinto") {
           correct++;
+          unanswered--;
           }
         else if (aOne !== "hobbit" || aOne !== "honda" || aOne !== "motobecane" || aOne !== "pinto") {
           incorrect++;
+          unanswered--;
           }
         }
     }
 
 
 
+    function run() {
+      intervalId = setInterval(decrement, 1000);
+    }
+
+    $("#done").on("click", score);
+
+    function score() {
+      stop();
+      $("#score").html("<h2> Total Correct: " + correct + "</h2>");
+      $("#score").append("<h2> Total Incorrect: " + incorrect + "</h2>");
+      $("#score_button").html("");
+      $("#score").append("<h2> Total Unanswered: " + unanswered + "</h2>");
+    }
+
+    // console.log(notSelected);
+    // if (notSelected === true) {
+    //   unanswered++;
+    //   console.log(unanswered);
+    //   }
+    //   else {
+    //     unanswered--;
+    //   }
+
+    // if (notSelected === true) {
+    //     unanswered++;
+    //     console.log(unanswered);
+    //   }
+    // else if (notSelected === false) {
+    //   console.log(unanswered);
+    //   unanswered--;
+    //
+    // }
 
 
 /*
@@ -101,20 +106,20 @@ var pinto = input[11].value;
 //     }
 // }
 
-for (var i = input.length; i--;) {
-  var maxi = input[0].value;
-  var targa = input[1].value;
-  var hobbit = input[2].value;
-  var magnum = input[3].value;
-  var honda = input[4].value;
-  var tsm = input[5].value;
-  var puch = input[6].value;
-  var vespa = input[7].value;
-  var motobecane = input[8].value;
-  var ciao = input[9].value;
-  var sprint = input[10].value;
-  var pinto = input[11].value;
-}
+// for (var i = input.length; i--;) {
+//   var maxi = input[0].value;
+//   var targa = input[1].value;
+//   var hobbit = input[2].value;
+//   var magnum = input[3].value;
+//   var honda = input[4].value;
+//   var tsm = input[5].value;
+//   var puch = input[6].value;
+//   var vespa = input[7].value;
+//   var motobecane = input[8].value;
+//   var ciao = input[9].value;
+//   var sprint = input[10].value;
+//   var pinto = input[11].value;
+// }
     // input[i].onchange = function() {
 
 
@@ -267,3 +272,22 @@ for (var i = input.length; i--;) {
 //   console.log($("input[name='a']:checked").val());
 //   // alert('One of the radio buttons is checked!');
 //   }
+
+
+//  if (!$("input[name='a']:checked").val()) {
+//   unanswered++
+//    console.log('Nothing is checked!');
+// }
+// else {
+//   // alert('One of the radio buttons is checked!');
+// }
+
+// var unknown = $("input[type=radio][name='a']").is(':checked');
+// console.log(unknown);
+// if (unknown === false) {
+//   unanswered++;
+// }
+// $("#score").append("<h2> Total Unanswered: " + unanswered + "</h2>");
+
+
+// var qOne = document.getElementsByName("a");
