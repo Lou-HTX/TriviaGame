@@ -1,15 +1,21 @@
+//launches the run function
 run();
+// sets timer to start count down from 30
 var counter = 30;
 var intervalId;
+// correct game counter
 var correct = 0;
+// incorrect game counter
 var incorrect = 0;
+// total number of questions if left unanswered
 var unanswered = 4;
 // var unknown = $("input[type=radio][name='a']").is(':checked');
 // var noSelection = $("input:radio[name='a']").is(":checked");
 // var notSelected = !$("input[name='a']:checked").val();
+// grabs all the radio buttons
 var input = $("input");
 
-
+// function for the counter to start counting down.
   function decrement() {
     counter--;
     $("#show-number").html("Time Remaining: " + counter + " Seconds");
@@ -17,15 +23,19 @@ var input = $("input");
       score();
     }
   }
-
+// function for the counter to stop
   function stop() {
     clearInterval(intervalId);
   }
-
+// for loop to get the values from the radio buttons
     for (var i = input.length; i--;) {
+// takes the value from the radio buttons when clicked
         input[i].onchange = function() {
+// sets the values of the radio button clicked and set it to a variable
           aOne = (this.value);
             console.log(aOne);
+// checks the variable value and if it equals one of the corrct values then increase the correct counter by each correct
+// choice and subtract one from the unanswered counter for each selection that is made
         if (aOne === "hobbit" || aOne === "honda" || aOne === "motobecane" || aOne === "pinto") {
           correct++;
           unanswered--;
@@ -38,13 +48,13 @@ var input = $("input");
     }
 
 
-
+    //sets the counter and then calls to the function to count down
     function run() {
       intervalId = setInterval(decrement, 1000);
     }
-
+    // call to action for the done button
     $("#done").on("click", score);
-
+    // function to stop the counter and display the results
     function score() {
       stop();
       $("#score").html("<h2> Total Correct: " + correct + "</h2>");
@@ -53,6 +63,10 @@ var input = $("input");
       $("#score").append("<h2> Total Unanswered: " + unanswered + "</h2>");
     }
 
+
+
+    
+// all the unused code i tested
     // console.log(notSelected);
     // if (notSelected === true) {
     //   unanswered++;
